@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRUNO BARBER | Barbearia Premium</title>
+<style>
+:root{
+  --bg:#0b0b0b;
+  --panel:#121212;
+  --card:#171717;
+  --text:#f5f2ea;
+  --muted:#aaa69e;
+  --line:#2a2926;
+  --accent:#c9a66b;
+  --accent2:#e4c78f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1180px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:3px;font-size:17px}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:25px;font-size:14px;color:#d7d2c9}
+.links a:hover{color:var(--accent2)}
+.nav-btn{background:var(--accent);color:#111;padding:11px 16px;border-radius:5px;font-weight:800;font-size:13px}
+.hero{min-height:670px;display:flex;align-items:center;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.83) 47%,rgba(0,0,0,.38) 100%),
+radial-gradient(circle at 78% 45%,#5c4a32 0,#272119 23%,#111 52%,#080808 75%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 55%,rgba(201,166,107,.10))}
+.hero-inner{max-width:1180px;width:100%;margin:auto;padding:90px 22px;position:relative;z-index:2}
+.eyebrow{color:var(--accent2);font-size:12px;letter-spacing:3px;font-weight:800;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(48px,8vw,86px);line-height:.93;margin:0 0 24px;max-width:760px;letter-spacing:-3px}
+.hero p{max-width:550px;color:#c3beb5;font-size:18px;margin:0 0 32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.primary,.secondary{padding:14px 20px;border-radius:5px;font-weight:800;font-size:14px}
+.primary{background:var(--accent);color:#111}
+.secondary{border:1px solid #6b6254;color:#f2eee6}
+.primary:hover{background:var(--accent2)}
+.stats{display:flex;gap:36px;margin-top:52px}
+.stat strong{display:block;font-size:24px}
+.stat span{color:var(--muted);font-size:12px}
+.section{max-width:1180px;margin:auto;padding:90px 22px}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+.kicker{color:var(--accent);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+h2{font-size:clamp(32px,5vw,48px);margin:7px 0 0;letter-spacing:-1.5px}
+.section-head p{max-width:420px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);padding:27px;border-radius:8px}
+.card:hover{border-color:#514735}
+.service-card{padding:0;overflow:hidden}.service-card img{display:block;width:100%;height:220px;object-fit:cover}.service-body{padding:27px}.choose{margin-top:18px;background:transparent;border:1px solid #5b503e;color:var(--accent2);padding:10px 13px;border-radius:4px;font-size:11px;font-weight:900;letter-spacing:.7px;cursor:pointer}.choose:hover{background:var(--accent);color:#111}
+.icon{width:42px;height:42px;border:1px solid #574c3b;border-radius:50%;display:grid;place-items:center;color:var(--accent);margin-bottom:22px;font-weight:900}
+.card h3{margin:0 0 8px;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.price{margin-top:22px;color:var(--accent2);font-weight:900;font-size:20px}
+.booking{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.steps{display:grid;gap:15px}
+.step{display:flex;gap:15px;align-items:flex-start}
+.num{min-width:34px;height:34px;border-radius:50%;background:#211c15;color:var(--accent2);display:grid;place-items:center;font-weight:900}
+.step b{display:block;margin-bottom:3px}
+.step span{color:var(--muted);font-size:14px}
+.contact-card{background:#0e0e0e;border:1px solid var(--line);border-radius:10px;padding:30px}
+.contact-row{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px}
+.contact-row:last-child{border:0}
+.contact-row span{color:var(--muted)}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:180px 180px;gap:10px}
+.photo{border-radius:7px;overflow:hidden;background:linear-gradient(135deg,#29251f,#111);position:relative}
+.photo:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(201,166,107,.22),transparent 45%,rgba(0,0,0,.45))}
+.photo.big{grid-row:span 2;background:linear-gradient(145deg,#403729,#171411)}
+.photo-label{position:absolute;left:17px;bottom:15px;font-weight:800;font-size:13px;letter-spacing:1px}
+.review{font-size:18px;line-height:1.6}
+.stars{color:var(--accent2);letter-spacing:3px}
+.footer{border-top:1px solid var(--line);padding:30px 22px;color:#858078;font-size:13px}
+.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.76);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.open{display:flex}
+.modal-box{background:#151515;border:1px solid #3a352d;border-radius:10px;width:min(480px,100%);padding:28px}
+.modal-box h3{margin-top:0;font-size:25px}
+label{display:block;font-size:12px;color:#aaa;margin:14px 0 6px}
+input,select{width:100%;background:#0c0c0c;border:1px solid #38342e;color:#fff;padding:13px;border-radius:5px}
+.form-btn{margin-top:20px;width:100%;border:0;cursor:pointer}
+.close{float:right;background:none;border:0;color:#aaa;font-size:24px;cursor:pointer}
+@media(max-width:760px){
+ .links{display:none}.nav-inner{padding:15px 17px}.nav-btn{padding:10px 13px}
+ .hero{min-height:620px}.hero-inner{padding:70px 20px}.hero p{font-size:16px}
+ .stats{gap:20px;flex-wrap:wrap}.section{padding:65px 20px}
+ .section-head{display:block}.section-head p{margin-top:15px}
+ .grid,.book-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px}.photo.big{grid-column:span 2;grid-row:auto}
+ .footer-inner{display:block}.footer-inner div+div{margin-top:10px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">BRUNO<span>.</span>BARBER</a>
+    <div class="links">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">A barbearia</a>
+      <a href="#marcacao">Marcações</a>
+      <a href="#contactos">Contactos</a>
+    </div>
+    <a class="nav-btn" href="#marcacao">Marcar agora</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Barbearia • Lisboa</div>
+    <h1>O teu estilo.<br><span style="color:var(--accent)">A nossa assinatura.</span></h1>
+    <p>Cortes precisos, barba cuidada e um ambiente onde cada detalhe conta. Marca o teu horário e sai daqui com o visual certo.</p>
+    <div class="cta">
+      <a class="primary" href="#marcacao">MARCAR HORÁRIO</a>
+      <a class="secondary" href="#servicos">VER SERVIÇOS</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>4.9/5</strong><span>AVALIAÇÃO</span></div>
+      <div class="stat"><strong>+1.200</strong><span>CLIENTES</span></div>
+      <div class="stat"><strong>8 anos</strong><span>DE EXPERIÊNCIA</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="servicos">
+  <div class="section-head">
+    <div><div class="kicker">O que fazemos</div><h2>Serviços sem complicação.</h2></div>
+    <p>Escolhe o serviço, vê o preço e marca. Simples assim.</p>
+  </div>
+  <div class="grid service-grid">
+    <article class="card service-card"><img src="https://images.pexels.com/photos/16997937/pexels-photo-16997937.jpeg?cs=srgb&dl=pexels-vlady-b-462525121-16997937.jpg&fm=jpg" alt="Cliente a receber um corte clássico numa barbearia"><div class="service-body"><div class="icon">01</div><h3>Corte Clássico</h3><p>Tesoura, máquina e acabamento à navalha.</p><div class="price">€15</div><button class="choose" onclick="openModal('Corte Clássico')">MARCAR ESTE CORTE</button></div></article>
+    <article class="card service-card"><img src="https://images.pexels.com/photos/32351058/pexels-photo-32351058.jpeg?cs=srgb&dl=pexels-sephina-cornwall-759251776-32351058.jpg&fm=jpg" alt="Barbeiro a cortar cabelo e barba de um cliente"><div class="service-body"><div class="icon">02</div><h3>Corte + Barba</h3><p>O pacote completo para sair impecável.</p><div class="price">€22</div><button class="choose" onclick="openModal('Corte + Barba')">MARCAR ESTE CORTE</button></div></article>
+    <article class="card service-card"><img src="https://images.pexels.com/photos/7447145/pexels-photo-7447145.jpeg?cs=srgb&dl=pexels-gustavo-fring-7447145.jpg&fm=jpg" alt="Barbeiro a trabalhar numa barba"><div class="service-body"><div class="icon">03</div><h3>Barba Premium</h3><p>Toalha quente, alinhamento e acabamento.</p><div class="price">€12</div><button class="choose" onclick="openModal('Barba Premium')">MARCAR ESTE CORTE</button></div></article>
+    <article class="card service-card"><img src="https://images.pexels.com/photos/12464841/pexels-photo-12464841.jpeg?cs=srgb&dl=pexels-izzet-cakalli-239176330-12464841.jpg&fm=jpg" alt="Barbeiro a fazer acabamento de fade"><div class="service-body"><div class="icon">04</div><h3>Skin Fade</h3><p>Fade limpo e gradual, com acabamento detalhado.</p><div class="price">€18</div><button class="choose" onclick="openModal('Skin Fade')">MARCAR ESTE CORTE</button></div></article>
+    <article class="card service-card"><img src="https://images.pexels.com/photos/7697354/pexels-photo-7697354.jpeg?cs=srgb&dl=pexels-rdne-7697354.jpg&fm=jpg" alt="Criança a receber um corte numa barbearia"><div class="service-body"><div class="icon">05</div><h3>Corte Infantil</h3><p>Cuidado e paciência para os mais novos.</p><div class="price">€12</div><button class="choose" onclick="openModal('Corte Infantil')">MARCAR ESTE CORTE</button></div></article>
+    <article class="card service-card"><img src="https://images.pexels.com/photos/12302331/pexels-photo-12302331.jpeg?cs=srgb&dl=pexels-theshuttervision-12302331.jpg&fm=jpg" alt="Cliente a receber tratamento facial com toalha quente"><div class="service-body"><div class="icon">06</div><h3>Tratamento VIP</h3><p>Corte, barba, toalha quente e tratamento facial.</p><div class="price">€30</div><button class="choose" onclick="openModal('Tratamento VIP')">MARCAR ESTE CORTE</button></div></article>
+  </div>
+</section>
+
+<section class="booking" id="marcacao">
+  <div class="section book-grid">
+    <div>
+      <div class="kicker">Marcações</div>
+      <h2>O teu próximo corte começa aqui.</h2>
+      <p style="color:var(--muted);max-width:500px">Escolhe o dia e o horário que preferes. Enviamos o pedido de marcação diretamente para a equipa.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>Escolhe o serviço</b><span>Seleciona o tratamento que queres.</span></div></div>
+        <div class="step"><div class="num">2</div><div><b>Indica o horário</b><span>Diz-nos quando te dá mais jeito.</span></div></div>
+        <div class="step"><div class="num">3</div><div><b>Recebe confirmação</b><span>A equipa confirma a tua marcação.</span></div></div>
+      </div>
+      <button class="primary form-btn" style="width:auto;margin-top:25px" onclick="openModal()">MARCAR AGORA</button>
+    </div>
+    <div class="contact-card">
+      <div class="kicker">Horário</div>
+      <h3 style="font-size:26px;margin:8px 0 18px">Estamos à tua espera.</h3>
+      <div class="contact-row"><b>Segunda a Sexta</b><span>09:00 — 20:00</span></div>
+      <div class="contact-row"><b>Sábado</b><span>09:00 — 18:00</span></div>
+      <div class="contact-row"><b>Domingo</b><span>Encerrado</span></div>
+      <div class="contact-row"><b>Telefone</b><span>+351 912 345 678</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sobre">
+  <div class="section-head">
+    <div><div class="kicker">A barbearia</div><h2>Mais do que um corte.</h2></div>
+    <p>Um espaço pensado para quem gosta de sair da cadeira a sentir que valeu a pena.</p>
+  </div>
+  <div class="gallery">
+    <div class="photo big"><div class="photo-label">ESTILO • PRECISÃO • ATITUDE</div></div>
+    <div class="photo"><div class="photo-label">CORTE</div></div>
+    <div class="photo"><div class="photo-label">BARBA</div></div>
+    <div class="photo"><div class="photo-label">AMBIENTE</div></div>
+    <div class="photo"><div class="photo-label">DETALHES</div></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="card">
+    <div class="stars">★★★★★</div>
+    <p class="review">“Atendimento impecável. O Bruno percebeu exatamente o corte que eu queria e o acabamento da barba ficou top. Já marquei a próxima.”</p>
+    <b>Tiago M. · Lisboa</b>
+  </div>
+</section>
+
+<section class="section" id="contactos" style="padding-top:25px">
+  <div class="section-head">
+    <div><div class="kicker">Onde estamos</div><h2>Passa por cá.</h2></div>
+    <p>Rua de exemplo, 45 · 1000-000 Lisboa</p>
+  </div>
+  <div class="contact-card">
+    <div class="contact-row"><b>📍 Morada</b><span>Rua de exemplo, 45, Lisboa</span></div>
+    <div class="contact-row"><b>📞 Telefone</b><span>+351 912 345 678</span></div>
+    <div class="contact-row"><b>✉️ Email</b><span>ola@brunobarber.pt</span></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner"><div>© 2026 BRUNO BARBER</div><div>Feito para quem leva o estilo a sério.</div></div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">×</button>
+    <div class="kicker">Pedido de marcação</div>
+    <h3>Escolhe o teu horário</h3>
+    <label>Nome</label><input id="name" placeholder="O teu nome">
+    <label>Serviço</label>
+    <select id="service"><option>Corte Clássico</option><option>Corte + Barba</option><option>Barba Premium</option><option>Skin Fade</option><option>Corte Infantil</option><option>Tratamento VIP</option></select>
+    <label>Data</label><input id="date" type="date">
+    <label>Horário</label><input id="time" type="time">
+    <button class="primary form-btn" onclick="sendRequest()">ENVIAR PEDIDO</button>
+  </div>
+</div>
+
+<script>
+function openModal(service){document.getElementById('modal').classList.add('open'); if(service){document.getElementById('service').value=service}}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function sendRequest(){
+  const n=document.getElementById('name').value.trim();
+  const s=document.getElementById('service').value;
+  const d=document.getElementById('date').value;
+  const t=document.getElementById('time').value;
+  if(!n||!d||!t){alert('Preenche o nome, a data e o horário.');return}
+  const msg=`Olá Bruno Barber! Sou ${n}. Gostaria de marcar ${s} para ${d} às ${t}.`;
+  window.open('https://wa.me/351912345678?text='+encodeURIComponent(msg),'_blank');
+}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+</script>
+</body>
+</html>
